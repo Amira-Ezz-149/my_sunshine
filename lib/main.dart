@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_sunshine/model/screens_data.dart';
+import 'screens/splash_screen.dart';
 import 'package:my_sunshine/screens/app_navigation.dart';
 import 'package:my_sunshine/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
@@ -9,7 +10,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -19,8 +19,9 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
             // primarySwatch: Color(0xff0981BC),
             ),
-        home: AppNavigation(),
+        home: SplashScreen(),
       ),
+
     );
   }
 }
