@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_sunshine/constants.dart';
+
+import 'app_navigation.dart';
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key key}) : super(key: key);
 
@@ -32,7 +34,11 @@ class SplashScreen extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   primary: basicColor,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                    return AppNavigation();
+                  }));
+                },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                       vertical: 15.0, horizontal: 10.0),

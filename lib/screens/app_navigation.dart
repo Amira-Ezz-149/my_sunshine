@@ -9,13 +9,6 @@ class AppNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<ScreensData>(
       builder: (context, model, child) => Scaffold(
-        // appBar: AppBar(
-        //   leading: IconButton(
-        //       onPressed: () {
-        //         Navigator.pop(context);
-        //       },
-        //       icon: Icon(Icons.arrow_back_ios)),
-        // ),
         body: model.currantScreen,
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: model.currantTap,
