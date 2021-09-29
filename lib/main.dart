@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/splash_screen.dart';
+import 'package:my_sunshine/screens/app_navigation.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: SplashScreen(),     
     );
   }
 }
