@@ -10,7 +10,7 @@ class SunshineScreen extends StatefulWidget {
 
 class _SunshineScreenState extends State<SunshineScreen> {
   List<bool> isSelected = [true, false, false, false];
-  int index = 0;
+  int newIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,9 @@ class _SunshineScreenState extends State<SunshineScreen> {
                         border: Border.all(color: Colors.black26, width: 0.3),
                         borderRadius: BorderRadius.circular(4),
                       ),
-                      child: index == 0 ? DatePickerWidget() : DropdownWidget(),
+                      child: isSelected[newIndex] == true
+                          ? DatePickerWidget()
+                          : DropdownWidget(),
                     ),
                   ],
                 ),
@@ -75,7 +77,9 @@ class _SunshineScreenState extends State<SunshineScreen> {
                         border: Border.all(color: Colors.black26, width: 0.3),
                         borderRadius: BorderRadius.circular(4),
                       ),
-                      child: index == 0 ? DatePickerWidget() : DropdownWidget(),
+                      child: isSelected[newIndex] == true
+                          ? DatePickerWidget()
+                          : DropdownWidget(),
                     ),
                   ],
                 ),
@@ -110,9 +114,11 @@ class _SunshineScreenState extends State<SunshineScreen> {
                           child: Text('Annual', style: TextStyle(fontSize: 14)),
                         ),
                       ],
-                      onPressed: (int newIndex) {
+                      onPressed: (newIndex) {
                         setState(() {
-                          for (index = 0; index < isSelected.length; index++) {
+                          for (int index = 0;
+                              index < isSelected.length;
+                              index++) {
                             if (index == newIndex) {
                               isSelected[index] = true;
                             } else {
@@ -127,7 +133,6 @@ class _SunshineScreenState extends State<SunshineScreen> {
                 SizedBox(
                   height: 27.0,
                 ),
-                
               ],
             ),
           ),
