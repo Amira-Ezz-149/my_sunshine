@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_sunshine/constants.dart';
 import 'package:my_sunshine/widgets/date_picker.dart';
+import 'package:my_sunshine/widgets/dropdown_widget.dart';
 
 class SunshineScreen extends StatefulWidget {
   @override
@@ -38,8 +39,16 @@ class _SunshineScreenState extends State<SunshineScreen> {
                     SizedBox(
                       width: 18.0,
                     ),
-                    index ==0?
-                    DatePickerWidget():0,
+                    Container(
+                      width: 140,
+                      height: 36,
+                      padding: const EdgeInsets.all(8.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black26, width: 0.3),
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: index == 0 ? DatePickerWidget() : DropdownWidget(),
+                    ),
                   ],
                 ),
                 SizedBox(
@@ -58,8 +67,16 @@ class _SunshineScreenState extends State<SunshineScreen> {
                     SizedBox(
                       width: 18.0,
                     ),
-                    index ==0?
-                    DatePickerWidget():0,
+                    Container(
+                      width: 140,
+                      height: 36,
+                      padding: const EdgeInsets.all(8.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black26, width: 0.3),
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: index == 0 ? DatePickerWidget() : DropdownWidget(),
+                    ),
                   ],
                 ),
                 SizedBox(
@@ -67,7 +84,6 @@ class _SunshineScreenState extends State<SunshineScreen> {
                 ),
                 Container(
                   width: double.infinity,
-                  decoration: BoxDecoration(),
                   child: Center(
                     child: ToggleButtons(
                       isSelected: isSelected,
@@ -96,9 +112,7 @@ class _SunshineScreenState extends State<SunshineScreen> {
                       ],
                       onPressed: (int newIndex) {
                         setState(() {
-                          for ( index = 0;
-                              index < isSelected.length;
-                              index++) {
+                          for (index = 0; index < isSelected.length; index++) {
                             if (index == newIndex) {
                               isSelected[index] = true;
                             } else {
@@ -110,6 +124,10 @@ class _SunshineScreenState extends State<SunshineScreen> {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 27.0,
+                ),
+                
               ],
             ),
           ),

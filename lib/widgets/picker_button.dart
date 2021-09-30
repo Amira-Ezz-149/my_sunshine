@@ -30,22 +30,11 @@ class ButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => InkWell(
         onTap: onClicked,
-        child: Container(
-          width: 140,
-          height: 36,
-          margin: const EdgeInsets.all(0.0),
-          padding: const EdgeInsets.all(3.0),
-          decoration: BoxDecoration(
-              border: Border.all(color: Colors.black26),
-              borderRadius: BorderRadius.circular(4)),
-          child: Center(
-            child: Text(
-              text,
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.black,
-              ),
-            ),
+        child: Text(
+          text,
+          style: TextStyle(
+            fontSize: 16,
+            color: Colors.black,
           ),
         ),
       );
