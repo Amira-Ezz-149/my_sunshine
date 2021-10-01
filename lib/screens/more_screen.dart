@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_sunshine/widgets/chart_widget.dart';
 
 import '../constants.dart';
 
@@ -18,87 +20,100 @@ class _MoreScreenState extends State<MoreScreen> {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 50.0,
-                  ),
-                  ToggleButtons(
-                    color: Colors.black,
-                    isSelected: isSelected,
-                    fillColor: basicColor,
-                    // selectedBorderColor: basicColor,
-                    // verticalDirection: VerticalDirection.up,
-                    // disabledColor: Colors.white,
-                    selectedColor: Colors.white,
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 50.0,
+                ),
+                ToggleButtons(
+                  color: Colors.black,
+                  isSelected: isSelected,
+                  fillColor: basicColor,
+                  // selectedBorderColor: basicColor,
+                  // verticalDirection: VerticalDirection.up,
+                  // disabledColor: Colors.white,
+                  selectedColor: Colors.white,
 
-                    textStyle: TextStyle(
-                      fontSize: 18.0,
+                  textStyle: TextStyle(
+                    fontSize: 18.0,
+                  ),
+                  borderRadius: BorderRadius.circular(10.0),
+                  splashColor: basicColor,
+
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 15.w),
+                      child: Text(
+                        'Temperature',
+                        textAlign: TextAlign.center,
+                        style:
+                            TextStyle(fontSize: 14.0, fontFamily: 'OpenSans'),
+                      ),
                     ),
-                    borderRadius: BorderRadius.circular(3.0),
-                    splashColor: basicColor,
-
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Text(
-                          'Temperature',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 14.0),
-                        ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 15.w),
+                      child: Text(
+                        'Humidity',
+                        textAlign: TextAlign.center,
+                        style:
+                            TextStyle(fontSize: 14.0, fontFamily: 'OpenSans'),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Text(
-                          'Humidity',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 14.0),
-                        ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 15.w),
+                      child: Text(
+                        'Wind',
+                        textAlign: TextAlign.center,
+                        style:
+                            TextStyle(fontSize: 14.0, fontFamily: 'OpenSans'),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Text(
-                          'Wind',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 14.0),
-                        ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 15.w),
+                      child: Text(
+                        'Cloud',
+                        textAlign: TextAlign.center,
+                        style:
+                            TextStyle(fontSize: 14.0, fontFamily: 'OpenSans'),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Text(
-                          'Cloud',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 14.0),
-                        ),
-                      ),
-                    ],
-                    onPressed: (int index) {
-                      setState(() {
-                        for (int buttonIndex = 0;
-                            buttonIndex < isSelected.length;
-                            buttonIndex++) {
-                          if (index == buttonIndex) {
-                            isSelected[buttonIndex] = true;
-                          } else {
-                            isSelected[buttonIndex] = false;
-                          }
+                    ),
+                  ],
+                  onPressed: (int index) {
+                    setState(() {
+                      for (int buttonIndex = 0;
+                          buttonIndex < isSelected.length;
+                          buttonIndex++) {
+                        if (index == buttonIndex) {
+                          isSelected[buttonIndex] = true;
+                        } else {
+                          isSelected[buttonIndex] = false;
                         }
-                      });
-                    },
+                      }
+                    });
+                  },
+                ),
+                SizedBox(
+                  height: 60.0,
+                ),
+                Text('Today\'s Temperature ',
+                    style: TextStyle(fontSize: 26.0, fontFamily: 'Lobster')),
+                SizedBox(
+                  height: 10.0,
+                ),
+                Text(
+                  '21 °C',
+                  style: TextStyle(
+                      fontSize: 72.0, color: basicColor, fontFamily: 'Lobster'),
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Expanded(
+                  child: Container(
+                    child: ChartWidget(),
                   ),
-                  SizedBox(
-                    height: 85.0,
-                  ),
-                  Text('Today\'s Temperature ',
-                      style: TextStyle(fontSize: 26.0)),
-                  SizedBox(
-                    height: 20.0,
-                  ),
-                  Text('21 °C',
-                      style: TextStyle(fontSize: 72.0, color: basicColor)),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),

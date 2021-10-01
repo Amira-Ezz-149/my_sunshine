@@ -54,7 +54,6 @@ class _DropdownWidgetState extends State<DropdownWidget> {
   Widget build(BuildContext context) {
     return DropdownButtonHideUnderline(
       child: DropdownButton<int>(
-        isExpanded: true,
         value: value,
         items: items.map(menuItem).toList(),
         onChanged: (value) => setState(() => this.value = value),
@@ -68,6 +67,7 @@ class _DropdownWidgetState extends State<DropdownWidget> {
           item.toString(),
           style: TextStyle(
             fontSize: 14,
+            fontFamily: 'OpenSans',
           ),
         ),
       );

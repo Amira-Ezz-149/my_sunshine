@@ -17,6 +17,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   intl: ^0.17.0
   fl_chart: ^0.40.0
+  flutter_screenutil: ^5.0.0+2
+
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -31,4 +35,8 @@ flutter:
     - family: Lobster
       fonts:
         - asset: assets/fonts/Lobster-Regular.ttf
- 
+
+    - family: OpenSans
+      fonts:
+        - asset: assets/fonts/OpenSans-Regular.ttf
+

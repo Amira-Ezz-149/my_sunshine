@@ -33,9 +33,7 @@ class ButtonWidget extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-            fontSize: 16,
-            color: Colors.black,
-          ),
+              fontSize: 16, color: Colors.black, fontFamily: 'OpenSans'),
         ),
       );
 }
