@@ -15,7 +15,7 @@ class AppNavigation extends StatelessWidget {
           onTap: (newIndex) {
             model.currantTap = newIndex;
           },
-          fixedColor:basicColor,
+          fixedColor: basicColor,
           showSelectedLabels: true,
           items: [
             BottomNavigationBarItem(
