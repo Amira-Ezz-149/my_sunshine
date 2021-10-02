@@ -17,21 +17,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(375, 812),
-      builder: () =>MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (BuildContext context) => ScreensData(),
-        ),
-        ChangeNotifierProvider(
-          create: (BuildContext context) => ToggleButtonsProvider(),
-        ),
-      ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(),
-        home: AppNavigation(),
-   
-    );
+        designSize: Size(375, 812),
+        builder: () => MultiProvider(
+              providers: [
+                ChangeNotifierProvider(
+                  create: (BuildContext context) => ScreensData(),
+                ),
+                ChangeNotifierProvider(
+                  create: (BuildContext context) => ToggleButtonsProvider(),
+                ),
+              ],
+              child: MaterialApp(
+                debugShowCheckedModeBanner: false,
+                theme: ThemeData(),
+                home: AppNavigation(),
+              ),
+            ));
   }
 }
