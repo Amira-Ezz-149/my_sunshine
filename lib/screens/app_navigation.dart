@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_sunshine/model/screens_data.dart';
+import 'package:my_sunshine/tools/screens_data.dart';
 import 'package:provider/provider.dart';
 
 import '../constants.dart';
@@ -15,7 +15,7 @@ class AppNavigation extends StatelessWidget {
           onTap: (newIndex) {
             model.currantTap = newIndex;
           },
-          fixedColor:basicColor,
+          fixedColor: basicColor,
           showSelectedLabels: true,
           items: [
             BottomNavigationBarItem(
