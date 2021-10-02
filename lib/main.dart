@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:my_sunshine/tools/screens_data.dart';
+import 'package:my_sunshine/screens/app_navigation.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_sunshine/model/screens_data.dart';
+
 import 'package:my_sunshine/screens/splash_screen.dart';
+import 'package:my_sunshine/tools/toggle_buttons_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -14,16 +18,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: Size(375, 812),
-      builder: () => ChangeNotifierProvider(
-        create: (BuildContext context) => ScreensData(),
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-              // primarySwatch: Color(0xff0981BC),
-              ),
-          home: SplashScreen(),
+      builder: () =>MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (BuildContext context) => ScreensData(),
         ),
-      ),
+        ChangeNotifierProvider(
+          create: (BuildContext context) => ToggleButtonsProvider(),
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(),
+        home: AppNavigation(),
+   
     );
   }
 }

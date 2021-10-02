@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_sunshine/constants.dart';
+import 'package:my_sunshine/tools/toggle_buttons_provider.dart';
 import 'package:my_sunshine/widgets/chart_widget.dart';
 import 'package:my_sunshine/widgets/date_picker.dart';
 import 'package:my_sunshine/widgets/dropdown_widget.dart';
+import 'package:provider/provider.dart';
 
 class SunshineScreen extends StatefulWidget {
   @override
@@ -11,31 +13,30 @@ class SunshineScreen extends StatefulWidget {
 }
 
 class _SunshineScreenState extends State<SunshineScreen> {
-  List<bool> isSelected = [true, false, false, false];
-  int newIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+        body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
+          child: Consumer<ToggleButtonsProvider>(
+            builder: (context, model, child) => Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
                 height: 30.0,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    'Start date',
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Start date',
                     style: TextStyle(
                       fontSize: 16.0.sp,
                       fontFamily: 'Lobster',
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -47,9 +48,18 @@ class _SunshineScreenState extends State<SunshineScreen> {
                       border: Border.all(color: Colors.black26, width: 0.3),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: isSelected[newIndex] == true
-                        ? DatePickerWidget()
-                        : DropdownWidget(),
+                    Container(
+                      width: 140,
+                      height: 36,
+                      padding: const EdgeInsets.all(8.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black26, width: 0.3),
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: model.isSelectedSS[model.newIndex] == true
+                          ? DatePickerWidget()
+                          : DropdownWidget(),
+
                   ),
                 ],
               ),
@@ -73,26 +83,28 @@ class _SunshineScreenState extends State<SunshineScreen> {
                       border: Border.all(color: Colors.black26, width: 0.3),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: isSelected[newIndex] == true
-                        ? DatePickerWidget()
-                        : DropdownWidget(),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 27.0,
-              ),
-              Container(
+                   
+              
+                      child: model.isSelectedSS[model.newIndex] == true
+                          ? DatePickerWidget()
+                          : DropdownWidget(),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 27.0,
+                ),
+                Container(
                 width: 1.sw,
-                child: Center(
-                  child: ToggleButtons(
-                    isSelected: isSelected,
-                    selectedColor: Colors.white,
-                    color: Colors.black,
-                    fillColor: basicColor,
+                  child: Center(
+                    child: ToggleButtons(
+                      isSelected: model.isSelectedSS,
+                      selectedColor: Colors.white,
+                      color: Colors.black,
+                      fillColor: basicColor,
                     borderRadius: BorderRadius.circular(10),
-                    children: <Widget>[
-                      Padding(
+                      children: <Widget>[
+                        Padding(
                         padding: EdgeInsets.symmetric(horizontal: 15.w),
                         child: Text('Daily',
                             style: TextStyle(
@@ -116,27 +128,19 @@ class _SunshineScreenState extends State<SunshineScreen> {
                             style: TextStyle(
                                 fontSize: 14.sp, fontFamily: 'OpenSans')),
                       ),
-                    ],
-                    onPressed: (newIndex) {
-                      setState(() {
-                        for (int index = 0;
-                            index < isSelected.length;
-                            index++) {
-                          if (index == newIndex) {
-                            isSelected[index] = true;
-                          } else {
-                            isSelected[index] = false;
-                          }
-                        }
-                      });
-                    },
+                      ],
+                      onPressed: (index) {
+                        model.switchButtonInSunshineScreen(index);
+                      },
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 25.0,
-              ),
-              Center(
+                SizedBox(
+                  height: 27.0,
+                ),
+              ],
+            ),
+            Center(
                 child: Text(
                   'Total Energy Produced By The Sun',
                   style: TextStyle(
@@ -176,7 +180,7 @@ class _SunshineScreenState extends State<SunshineScreen> {
             ],
           ),
         ),
-      ),
-    );
+     
+    ));
   }
 }
