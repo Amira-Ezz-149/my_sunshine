@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:my_sunshine/constants.dart';
+import 'package:my_sunshine/tools/toggle_buttons_provider.dart';
 import 'package:my_sunshine/widgets/date_picker.dart';
 import 'package:my_sunshine/widgets/dropdown_widget.dart';
+import 'package:provider/provider.dart';
 
 class SunshineScreen extends StatefulWidget {
   @override
@@ -9,17 +11,15 @@ class SunshineScreen extends StatefulWidget {
 }
 
 class _SunshineScreenState extends State<SunshineScreen> {
-  List<bool> isSelected = [true, false, false, false];
-  int newIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: Column(
+        body: SafeArea(
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          child: Consumer<ToggleButtonsProvider>(
+            builder: (context, model, child) => Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -47,7 +47,7 @@ class _SunshineScreenState extends State<SunshineScreen> {
                         border: Border.all(color: Colors.black26, width: 0.3),
                         borderRadius: BorderRadius.circular(4),
                       ),
-                      child: isSelected[newIndex] == true
+                      child: model.isSelectedSS[model.newIndex] == true
                           ? DatePickerWidget()
                           : DropdownWidget(),
                     ),
@@ -77,7 +77,7 @@ class _SunshineScreenState extends State<SunshineScreen> {
                         border: Border.all(color: Colors.black26, width: 0.3),
                         borderRadius: BorderRadius.circular(4),
                       ),
-                      child: isSelected[newIndex] == true
+                      child: model.isSelectedSS[model.newIndex] == true
                           ? DatePickerWidget()
                           : DropdownWidget(),
                     ),
@@ -90,7 +90,7 @@ class _SunshineScreenState extends State<SunshineScreen> {
                   width: double.infinity,
                   child: Center(
                     child: ToggleButtons(
-                      isSelected: isSelected,
+                      isSelected: model.isSelectedSS,
                       selectedColor: Colors.white,
                       color: Colors.black,
                       fillColor: basicColor,
@@ -114,18 +114,8 @@ class _SunshineScreenState extends State<SunshineScreen> {
                           child: Text('Annual', style: TextStyle(fontSize: 14)),
                         ),
                       ],
-                      onPressed: (newIndex) {
-                        setState(() {
-                          for (int index = 0;
-                              index < isSelected.length;
-                              index++) {
-                            if (index == newIndex) {
-                              isSelected[index] = true;
-                            } else {
-                              isSelected[index] = false;
-                            }
-                          }
-                        });
+                      onPressed: (index) {
+                        model.switchButtonInSunshineScreen(index);
                       },
                     ),
                   ),
@@ -138,6 +128,6 @@ class _SunshineScreenState extends State<SunshineScreen> {
           ),
         ),
       ),
-    );
+    ));
   }
 }
