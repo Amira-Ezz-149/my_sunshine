@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_sunshine/constants.dart';
 import 'package:my_sunshine/tools/toggle_buttons_provider.dart';
+import 'package:my_sunshine/widgets/chart_widget.dart';
 import 'package:my_sunshine/widgets/date_picker.dart';
 import 'package:my_sunshine/widgets/dropdown_widget.dart';
 import 'package:provider/provider.dart';
@@ -15,16 +17,15 @@ class _SunshineScreenState extends State<SunshineScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Consumer<ToggleButtonsProvider>(
             builder: (context, model, child) => Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 51.0,
+                height: 30.0,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -32,12 +33,20 @@ class _SunshineScreenState extends State<SunshineScreen> {
                   children: [
                     Text(
                       'Start date',
-                      style: TextStyle(
-                        fontSize: 16.0,
+                    style: TextStyle(
+                      fontSize: 16.0.sp,
+                      fontFamily: 'Lobster',
                       ),
                     ),
-                    SizedBox(
-                      width: 18.0,
+                  ),
+                  SizedBox(
+                    width: 18.0.w,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black26, width: 0.3),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     Container(
                       width: 140,
@@ -50,33 +59,32 @@ class _SunshineScreenState extends State<SunshineScreen> {
                       child: model.isSelectedSS[model.newIndex] == true
                           ? DatePickerWidget()
                           : DropdownWidget(),
+
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 15.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'End date',
+                    style: TextStyle(fontSize: 16.0, fontFamily: 'Lobster'),
+                  ),
+                  SizedBox(
+                    width: 18.0.w,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black26, width: 0.3),
+                      borderRadius: BorderRadius.circular(10),
                     ),
-                  ],
-                ),
-                SizedBox(
-                  height: 18.0,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'End date',
-                      style: TextStyle(
-                        fontSize: 16.0,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 18.0,
-                    ),
-                    Container(
-                      width: 140,
-                      height: 36,
-                      padding: const EdgeInsets.all(8.0),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black26, width: 0.3),
-                        borderRadius: BorderRadius.circular(4),
-                      ),
+                   
+              
                       child: model.isSelectedSS[model.newIndex] == true
                           ? DatePickerWidget()
                           : DropdownWidget(),
@@ -87,32 +95,39 @@ class _SunshineScreenState extends State<SunshineScreen> {
                   height: 27.0,
                 ),
                 Container(
-                  width: double.infinity,
+                width: 1.sw,
                   child: Center(
                     child: ToggleButtons(
                       isSelected: model.isSelectedSS,
                       selectedColor: Colors.white,
                       color: Colors.black,
                       fillColor: basicColor,
-                      borderRadius: BorderRadius.circular(3),
+                    borderRadius: BorderRadius.circular(10),
                       children: <Widget>[
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          child: Text('Daily', style: TextStyle(fontSize: 14)),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          child: Text('Weekly', style: TextStyle(fontSize: 14)),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          child:
-                              Text('Monthly', style: TextStyle(fontSize: 14)),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          child: Text('Annual', style: TextStyle(fontSize: 14)),
-                        ),
+                        padding: EdgeInsets.symmetric(horizontal: 15.w),
+                        child: Text('Daily',
+                            style: TextStyle(
+                                fontSize: 14.sp, fontFamily: 'OpenSans')),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 15.w),
+                        child: Text('Weekly',
+                            style: TextStyle(
+                                fontSize: 14.sp, fontFamily: 'OpenSans')),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 15.w),
+                        child: Text('Monthly',
+                            style: TextStyle(
+                                fontSize: 14.sp, fontFamily: 'OpenSans')),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 15.w),
+                        child: Text('Annual',
+                            style: TextStyle(
+                                fontSize: 14.sp, fontFamily: 'OpenSans')),
+                      ),
                       ],
                       onPressed: (index) {
                         model.switchButtonInSunshineScreen(index);
@@ -125,9 +140,47 @@ class _SunshineScreenState extends State<SunshineScreen> {
                 ),
               ],
             ),
+            Center(
+                child: Text(
+                  'Total Energy Produced By The Sun',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontFamily: 'Lobster',
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 25.0,
+              ),
+              Expanded(
+                child: Row(
+                  children: [
+                    RotatedBox(
+                      quarterTurns: 3,
+                      child: Text(
+                        'kw-hr/m^2/day',
+                        style: TextStyle(
+                          color: Color(0xff67727d),
+                          fontSize: 16,
+                          fontFamily: 'OpenSans',
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 5.w,
+                    ),
+                    Expanded(
+                      child: Container(
+                        child: ChartWidget(),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
-      ),
+     
     ));
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_sunshine/tools/toggle_buttons_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_sunshine/widgets/chart_widget.dart';
 
 import '../constants.dart';
 
@@ -63,9 +65,18 @@ class _MoreScreenState extends State<MoreScreen> {
                     ),
                     Text('21 °C',
                         style: TextStyle(fontSize: 72.0, color: basicColor)),
+                     SizedBox(
+                  height: 20.0,
+                ),
+                     Expanded(
+                  child: Container(
+                    child: ChartWidget(),
+                  ),
+                ),
                   ],
                 ),
               ),
+      
             ),
           ),
         ),
