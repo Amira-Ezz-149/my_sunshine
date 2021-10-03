@@ -34,6 +34,9 @@ class SplashScreen extends StatelessWidget {
               child: Column(
                 // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  SizedBox(
+                    height: 20.0,
+                  ),
                   // Icon(
                   //   Icons.wb_sunny_outlined,
                   //   color: Colors.white,

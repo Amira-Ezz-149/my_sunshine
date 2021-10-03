@@ -68,6 +68,7 @@ class _DropdownWidgetState extends State<DropdownWidget> {
           style: TextStyle(
             fontSize: 14,
             fontFamily: 'OpenSans',
+            // color: Colors.white
           ),
         ),
       );

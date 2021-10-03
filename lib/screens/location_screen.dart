@@ -24,6 +24,8 @@ class _LocationScreenState extends State<LocationScreen> {
       setState(() {
         latitude = '$lat';
         longitude = '$long';
+        latController.text = latitude;
+        longController.text = longitude;
         location = 'latitude : $latitude ,\n longitude : $longitude ';
       });
     }).catchError((e) {
@@ -36,6 +38,7 @@ class _LocationScreenState extends State<LocationScreen> {
     return Scaffold(
       body: SafeArea(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             buildRow(title: 'Longitude', controller: longController),
             buildRow(title: 'Latitude', controller: latController),
@@ -84,10 +87,6 @@ class _LocationScreenState extends State<LocationScreen> {
                         borderRadius: BorderRadius.circular(40.0))),
                 onPressed: () {
                   getCurrentLocation();
-                  setState(() {
-                    latController.text ??= latitude;
-                    longController.text ??= longitude;
-                  });
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
@@ -102,13 +101,13 @@ class _LocationScreenState extends State<LocationScreen> {
             SizedBox(
               height: 50,
             ),
-            location != null
-                ? Text(location,
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                        fontFamily: 'Calibri'))
-                : Text('')
+            // location != null
+            //     ? Text(location,
+            //         style: TextStyle(
+            //             color: Colors.black,
+            //             fontSize: 20.0,
+            //             fontFamily: 'Calibri'))
+            //     : Text('')
           ],
         ),
       ),

@@ -47,15 +47,15 @@ class _SunshineScreenState extends State<SunshineScreen> {
                       // height: 40.0.h,
                       padding: const EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.topRight,
-                          end: Alignment.bottomLeft,
-                          colors: [
-                            Color(0xff2150a8),
-                            Color(0xff8659b4),
-                          ],
-                        ),
-                        border: Border.all(color: Colors.white, width: 0.3),
+                        // gradient: LinearGradient(
+                        //   begin: Alignment.topRight,
+                        //   end: Alignment.bottomLeft,
+                        //   colors: [
+                        //     Color(0xff2150a8),
+                        //     Color(0xff8659b4),
+                        //   ],
+                        // ),
+                        border: Border.all(color: Colors.indigo, width: 0.3),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: model.isSelectedSS[model.newIndex] == true
@@ -84,15 +84,15 @@ class _SunshineScreenState extends State<SunshineScreen> {
                     Container(
                       padding: const EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.topRight,
-                          end: Alignment.bottomLeft,
-                          colors: [
-                            Color(0xff2150a8),
-                            Color(0xff8659b4),
-                          ],
-                        ),
-                        border: Border.all(color: Colors.white, width: 0.3),
+                        // gradient: LinearGradient(
+                        //   begin: Alignment.topRight,
+                        //   end: Alignment.bottomLeft,
+                        //   colors: [
+                        //     Color(0xff2150a8),
+                        //     Color(0xff8659b4),
+                        //   ],
+                        // ),
+                        border: Border.all(color: Colors.indigo, width: 0.3),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: model.isSelectedSS[model.newIndex] == true
