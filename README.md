@@ -7,6 +7,7 @@ Sole is an application that accesses the information on NASA’s prediction of w
 ### A few details about the project code:
 - It's a flutter project with provider state management
 - fl_chart package for graphs 
+- syncfusion_flutter_charts for graphs
 
 ## Check this out:
 ## App Photos : 
