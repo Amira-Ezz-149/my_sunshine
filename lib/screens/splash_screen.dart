@@ -50,6 +50,14 @@ class SplashScreen extends StatelessWidget {
                   SizedBox(
                     height: 10.0,
                   ),
+
+                  Text(
+                    'Welcome To',
+                    style: TextStyle(
+                        fontSize: 30.0,
+                        color: Colors.white,
+                        fontFamily: 'Lobster'),
+                  ),
                   Text(
                     'S O L E',
                     style: TextStyle(
