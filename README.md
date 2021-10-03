@@ -1,16 +1,16 @@
-# my_sunshine
+# Sole ☀️
 
-A new Flutter project.
+### Description
 
-## Getting Started
+Sole is an application that accesses the information on NASA’s prediction of worldwide renewable energy resource (POWER) web services portal and provides useful information about sunshine in a simple easily understood form to the general public to mentor the electrical output of their system or to make a proper purchasing decision.
 
-This project is a starting point for a Flutter application.
+### A few details about the project code:
+- It's a flutter project with provider state management
+- fl_chart package for graphs 
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Check this out:
+## App Photos : 
+![4](https://user-images.githubusercontent.com/57525957/135770128-8c6fca75-ffde-46ea-8049-2e43e0abc812.jpg)
+![5](https://user-images.githubusercontent.com/57525957/135770148-ca818f15-28da-438c-a37c-7712e1629c3a.jpg)
+![6](https://user-images.githubusercontent.com/57525957/135770151-64cb33e3-2b96-47f6-8651-6572671e05ca.jpg)
+![7](https://user-images.githubusercontent.com/57525957/135770153-ac6dca30-7a2d-482a-97f1-1e89144d6160.jpg)
