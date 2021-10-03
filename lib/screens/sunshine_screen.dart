@@ -34,6 +34,7 @@ class _SunshineScreenState extends State<SunshineScreen> {
                     Text(
                       'Start date',
                       style: TextStyle(
+                        color: Colors.indigo,
                         fontSize: 16.0.sp,
                         fontFamily: 'Lobster',
                       ),
@@ -42,9 +43,19 @@ class _SunshineScreenState extends State<SunshineScreen> {
                       width: 18.0.w,
                     ),
                     Container(
+                      // width: 50.0.w,
+                      // height: 40.0.h,
                       padding: const EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black26, width: 0.3),
+                        gradient: LinearGradient(
+                          begin: Alignment.topRight,
+                          end: Alignment.bottomLeft,
+                          colors: [
+                            Color(0xff2150a8),
+                            Color(0xff8659b4),
+                          ],
+                        ),
+                        border: Border.all(color: Colors.white, width: 0.3),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: model.isSelectedSS[model.newIndex] == true
@@ -62,7 +73,10 @@ class _SunshineScreenState extends State<SunshineScreen> {
                   children: [
                     Text(
                       'End date',
-                      style: TextStyle(fontSize: 16.0, fontFamily: 'Lobster'),
+                      style: TextStyle(
+                          fontSize: 16.0,
+                          fontFamily: 'Lobster',
+                          color: Colors.indigo),
                     ),
                     SizedBox(
                       width: 18.0.w,
@@ -70,7 +84,15 @@ class _SunshineScreenState extends State<SunshineScreen> {
                     Container(
                       padding: const EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black26, width: 0.3),
+                        gradient: LinearGradient(
+                          begin: Alignment.topRight,
+                          end: Alignment.bottomLeft,
+                          colors: [
+                            Color(0xff2150a8),
+                            Color(0xff8659b4),
+                          ],
+                        ),
+                        border: Border.all(color: Colors.white, width: 0.3),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: model.isSelectedSS[model.newIndex] == true
@@ -131,7 +153,7 @@ class _SunshineScreenState extends State<SunshineScreen> {
                     'Total Energy Produced By The Sun',
                     style: TextStyle(
                       fontSize: 20,
-                      fontFamily: 'Lobster',
+                      fontFamily: 'Calibri',
                     ),
                   ),
                 ),

@@ -62,4 +62,14 @@ List<Widget> toggleTextListWithoutCloud = [
   ),
 ];
 
-Color basicColor = Color(0xff0981BC);
+Color basicColor = Colors.indigo;
+Decoration kButtonStyle = BoxDecoration(
+    borderRadius: BorderRadius.circular(40.0),
+    gradient: LinearGradient(
+      begin: Alignment.topRight,
+      end: Alignment.bottomLeft,
+      colors: [
+        Color(0xff2150a8),
+        Color(0xff8659b4),
+      ],
+    ));

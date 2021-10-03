@@ -1,11 +1,12 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:my_sunshine/widgets/chart_data.dart';
+import 'package:my_sunshine/constants.dart';
 
 class ChartWidget extends StatelessWidget {
   final List<Color> gradientColors = [
-    const Color(0xff0981BC),
-    const Color(0xff23b6e6),
+    basicColor,
+    const Color(0xff8659b4),
   ];
 
   @override
