@@ -15,3 +15,4 @@ Sole is an application that accesses the information on NASA’s prediction of w
  width="235" height="500" src="https://user-images.githubusercontent.com/57525957/135770151-64cb33e3-2b96-47f6-8651-6572671e05ca.jpg"> 
  
  <img align="left"  width="235" height="500" src="https://user-images.githubusercontent.com/57525957/135770153-ac6dca30-7a2d-482a-97f1-1e89144d6160.jpg"><img align="center"  width="235" height="500" src="https://user-images.githubusercontent.com/57525957/135770741-c23db1a7-8f39-4a24-9d82-c3aa1e5c1e08.jpg">
+<img src ="https://user-images.githubusercontent.com/52948095/135773238-e98c7c38-4673-4395-9139-a0c6df52aa2f.gif" width="250"/>
