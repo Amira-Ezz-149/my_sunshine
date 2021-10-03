@@ -4,6 +4,8 @@
 
 Sole is an application that accesses the information on NASA’s prediction of worldwide renewable energy resource (POWER) web services portal and provides useful information about sunshine in a simple easily understood form to the general public to mentor the electrical output of their system or to make a proper purchasing decision.
 
+###  A youtube video for more info : https://www.youtube.com/watch?v=JGlxO5HqoKk
+
 ### A few details about the project code:
 - It's a flutter project with provider state management
 - fl_chart package for graphs 
