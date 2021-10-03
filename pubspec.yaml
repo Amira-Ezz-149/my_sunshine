@@ -18,7 +18,7 @@ dependencies:
   intl: ^0.17.0
   fl_chart: ^0.40.0
   flutter_screenutil: ^5.0.0+2
-
+  syncfusion_flutter_charts: ^19.3.43
 
 
 dev_dependencies:
@@ -39,4 +39,10 @@ flutter:
     - family: OpenSans
       fonts:
         - asset: assets/fonts/OpenSans-Regular.ttf
+
+    - family: Calibri
+      fonts:
+        - asset: assets/fonts/Calibri Light.ttf
+
+
 

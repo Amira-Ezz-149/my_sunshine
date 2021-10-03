@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_sunshine/tools/toggle_buttons_provider.dart';
+import 'package:my_sunshine/widgets/line_chart.dart';
 import 'package:provider/provider.dart';
 import 'package:my_sunshine/widgets/chart_widget.dart';
 
@@ -49,21 +50,21 @@ class _MoreScreenState extends State<MoreScreen> {
                     height: 60.0,
                   ),
                   Text('Today\'s Temperature ',
-                      style: TextStyle(fontSize: 26.0, fontFamily: 'Lobster')),
+                      style: TextStyle(fontSize: 26.0, fontFamily: 'Calibri')),
                   SizedBox(
                     height: 10.0,
                   ),
                   Text('21 °C',
                       style: TextStyle(
                           fontSize: 72.0,
-                          fontFamily: 'Lobster',
+                          fontFamily: 'Calibri',
                           color: basicColor)),
                   SizedBox(
                     height: 20.0,
                   ),
                   Expanded(
                     child: Container(
-                      child: ChartWidget(),
+                      child: LineChart(),
                     ),
                   ),
                 ],
