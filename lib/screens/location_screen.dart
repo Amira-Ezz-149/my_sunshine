@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:my_sunshine/screens/sunshine_screen.dart';
+import 'package:my_sunshine/tools/screens_data.dart';
 
 import '../component.dart';
 import '../constants.dart';
@@ -54,7 +56,12 @@ class _LocationScreenState extends State<LocationScreen> {
                     primary: Colors.transparent,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(40.0))),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ScreensData.screens[1]));
+                },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                       vertical: 15.0, horizontal: 20.0),

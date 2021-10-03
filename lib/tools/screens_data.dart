@@ -6,12 +6,16 @@ import 'package:my_sunshine/screens/sunshine_screen.dart';
 class ScreensData extends ChangeNotifier {
   int _currantTap = 0;
 
-  List<Widget> screens = [LocationScreen(), SunshineScreen(), MoreScreen()];
+  static List<Widget> screens = [
+    LocationScreen(),
+    SunshineScreen(),
+    MoreScreen()
+  ];
   set currantTap(int tap) {
     this._currantTap = tap;
     notifyListeners();
   }
 
   int get currantTap => this._currantTap;
-  Widget get currantScreen => this.screens[this._currantTap];
+  Widget get currantScreen => ScreensData.screens[this._currantTap];
 }
