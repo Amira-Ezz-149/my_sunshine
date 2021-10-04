@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:my_sunshine/screens/sunshine_screen.dart';
 import 'package:my_sunshine/tools/screens_data.dart';
 
 import '../component.dart';
@@ -67,7 +66,7 @@ class _LocationScreenState extends State<LocationScreen> {
                       vertical: 15.0, horizontal: 20.0),
                   child: Text(
                     'Submit',
-                    style: TextStyle(fontSize: 20.0, fontFamily: 'Calibri'),
+                    style: TextStyle(fontSize: 20.0, fontFamily: 'Lobster'),
                   ),
                 ),
               ),
@@ -75,11 +74,11 @@ class _LocationScreenState extends State<LocationScreen> {
             SizedBox(
               height: 50,
             ),
-            Text('------- Or Know your location -------',
+            Text('------- Or use your current location -------',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20.0,
-                    fontFamily: 'Calibri')),
+                    fontFamily: 'Lobster')),
             SizedBox(
               height: 50,
             ),
@@ -100,7 +99,7 @@ class _LocationScreenState extends State<LocationScreen> {
                       vertical: 15.0, horizontal: 20.0),
                   child: Text(
                     'Get Location',
-                    style: TextStyle(fontSize: 20.0, fontFamily: 'Calibri'),
+                    style: TextStyle(fontSize: 20.0, fontFamily: 'Lobster'),
                   ),
                 ),
               ),
