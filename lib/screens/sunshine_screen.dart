@@ -112,28 +112,28 @@ class _SunshineScreenState extends State<SunshineScreen> {
                       selectedColor: Colors.white,
                       color: Colors.black,
                       fillColor: basicColor,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(10.r),
                       children: <Widget>[
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 15.w),
+                          padding: EdgeInsets.symmetric(horizontal: 10.w),
                           child: Text('Daily',
                               style: TextStyle(
                                   fontSize: 14.sp, fontFamily: 'OpenSans')),
                         ),
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 15.w),
+                          padding: EdgeInsets.symmetric(horizontal: 10.w),
                           child: Text('Weekly',
                               style: TextStyle(
                                   fontSize: 14.sp, fontFamily: 'OpenSans')),
                         ),
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 15.w),
+                          padding: EdgeInsets.symmetric(horizontal: 10.w),
                           child: Text('Monthly',
                               style: TextStyle(
                                   fontSize: 14.sp, fontFamily: 'OpenSans')),
                         ),
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 15.w),
+                          padding: EdgeInsets.symmetric(horizontal: 10.w),
                           child: Text('Annual',
                               style: TextStyle(
                                   fontSize: 14.sp, fontFamily: 'OpenSans')),

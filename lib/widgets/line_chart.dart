@@ -1,7 +1,4 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../constants.dart';
@@ -23,25 +20,25 @@ class _LineChartState extends State<LineChart> {
     super.initState();
   }
 
-  int leftDiceNumber = 1981;
-  int rightDiceNumber = 37;
-
-  void displayNum() {
-    setState(() {
-      leftDiceNumber = Random().nextInt(40) + 1;
-      rightDiceNumber = Random().nextInt(20) + 1;
-    });
-  }
+  // int leftDiceNumber = 1981;
+  // int rightDiceNumber = 37;
+  //
+  // void displayNum() {
+  //   setState(() {
+  //     leftDiceNumber = Random().nextInt(40) + 1;
+  //     rightDiceNumber = Random().nextInt(20) + 1;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
     return SfCartesianChart(
-      title: ChartTitle(text: 'Yearly sales analysis'),
+      title: ChartTitle(text: 'Temperature Analysis'),
       legend: Legend(isVisible: true),
       tooltipBehavior: _tooltipBehavior,
       series: <SplineSeries>[
         SplineSeries<SalesData, int>(
-            name: 'Sales',
+            name: 'Data',
             dataSource: _chartData,
             xValueMapper: (SalesData sales, _) => sales.year,
             yValueMapper: (SalesData sales, _) => sales.sales,

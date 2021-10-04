@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 List<Widget> toggleTextList = [
   Padding(
-    padding: EdgeInsets.symmetric(horizontal: 15.w),
+    padding: EdgeInsets.symmetric(horizontal: 8.w),
     child: Text(
       'Temperature',
       textAlign: TextAlign.center,
@@ -11,7 +11,7 @@ List<Widget> toggleTextList = [
     ),
   ),
   Padding(
-    padding: EdgeInsets.symmetric(horizontal: 15.w),
+    padding: EdgeInsets.symmetric(horizontal: 8.w),
     child: Text(
       'Humidity',
       textAlign: TextAlign.center,
@@ -19,15 +19,15 @@ List<Widget> toggleTextList = [
     ),
   ),
   Padding(
-    padding: EdgeInsets.symmetric(horizontal: 15.w),
+    padding: EdgeInsets.symmetric(horizontal: 8.w),
     child: Text(
-      'Wind',
+      'Pressure',
       textAlign: TextAlign.center,
       style: TextStyle(fontSize: 14.0, fontFamily: 'OpenSans'),
     ),
   ),
   Padding(
-    padding: EdgeInsets.symmetric(horizontal: 15.w),
+    padding: EdgeInsets.symmetric(horizontal: 8.w),
     child: Text(
       'Cloud',
       textAlign: TextAlign.center,
@@ -37,7 +37,7 @@ List<Widget> toggleTextList = [
 ];
 List<Widget> toggleTextListWithoutCloud = [
   Padding(
-    padding: EdgeInsets.symmetric(horizontal: 15.w),
+    padding: EdgeInsets.symmetric(horizontal: 10.w),
     child: Text(
       'Temperature',
       textAlign: TextAlign.center,
@@ -45,7 +45,7 @@ List<Widget> toggleTextListWithoutCloud = [
     ),
   ),
   Padding(
-    padding: EdgeInsets.symmetric(horizontal: 15.w),
+    padding: EdgeInsets.symmetric(horizontal: 10.w),
     child: Text(
       'Humidity',
       textAlign: TextAlign.center,
@@ -53,9 +53,9 @@ List<Widget> toggleTextListWithoutCloud = [
     ),
   ),
   Padding(
-    padding: EdgeInsets.symmetric(horizontal: 15.w),
+    padding: EdgeInsets.symmetric(horizontal: 10.w),
     child: Text(
-      'Wind',
+      'Pressure',
       textAlign: TextAlign.center,
       style: TextStyle(fontSize: 14.0, fontFamily: 'OpenSans'),
     ),
